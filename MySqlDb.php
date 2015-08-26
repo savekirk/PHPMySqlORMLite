@@ -1,4 +1,5 @@
 <?php
+
 class MysqlDB {
 
    protected $_mysql;
@@ -11,7 +12,7 @@ class MysqlDB {
    protected $_whereBetween = array();
 
    public function __construct() {
-      include($_SERVER["DOCUMENT_ROOT"] . "/ghanabuys/classes/config.php");
+      require_once __DIR__ . '/config.php';
       $this->_mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE) or die('There was a problem connecting to the database');
    }
 
